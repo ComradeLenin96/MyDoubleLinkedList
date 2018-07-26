@@ -53,42 +53,42 @@ int	main()	{
 }
 
 Node*	createNode(int	value)	{
-	Node*	newNode	=	malloc(sizeof(Node));
-	if (newNode	==	NULL)	printf("Failed	to	allocate	memory\n");
+	Node*	newNode	= malloc(sizeof(Node));
+	if (newNode == NULL)	printf("Failed	to allocate memory\n");
 	newNode->val =	value;
-	newNode->prev	=	newNode->next	=	NULL;
+	newNode->prev = newNode->next = NULL;
 }
 
-LinkedList*	emptyList()	{
-	LinkedList*	list =	malloc(sizeof(LinkedList));
-	list->head	=	NULL;
+LinkedList* emptyList()	{
+	LinkedList* list = malloc(sizeof(LinkedList));
+	list->head = NULL;
 	return	list;
 }
 
 void	insertFront(int value,	LinkedList*	list)	{
-	Node*	newNode	=	createNode(value);
-	if (list->head	==	NULL)	
-		list->head	=	newNode;
-	else	{
-		newNode->next	=	list->head;
-		list->head->prev	=	newNode;
-		list->head	=	newNode;
+	Node* newNode	= createNode(value);
+	if (list->head	== NULL)	
+		list->head = newNode;
+	else {
+		newNode->next	= list->head;
+		list->head->prev = newNode;
+		list->head = newNode;
 	}
-	printf("Insertion	succesed!!!!!\n");
+	printf("Insertion succesed!!!!!\n");
 }
 
 void	insertBack(int value,	LinkedList*	list)	{
-	Node*	newNode	=	createNode(value);
-	Node*	temp	=	NULL;
-	if (list->head	==	NULL)	
-		list->head	=	newNode;
-	else	{
-		temp	=	list->head;
-		while	(temp->next	!=	NULL)	{	temp	=	temp->next;	}
-		temp->next	=	newNode;
-		newNode->prev	=	temp;
+	Node*	newNode	= createNode(value);
+	Node*	temp	= NULL;
+	if (list->head	== NULL)	
+		list->head = newNode;
+	else{
+		temp	= list->head;
+		while	(temp->next != NULL)	{ temp	= temp->next;	}
+		temp->next = newNode;
+		newNode->prev = temp;
 	}
-	printf("Insertion	succesed!!!!!\n");
+	printf("Insertion succesed!!!!!\n");
 }
 
 void	display(LinkedList*	list)	{
